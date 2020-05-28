@@ -218,9 +218,9 @@ func Get_Verses(book, chapter string, startVerse, endVerse int64) (string, error
 	defer Client.CloseIdleConnections()
 
 	if endVerse == startVerse {
-		query = fmt.Sprintf("%s%s %s:%v&formatting=plain", API_Endpoint, book, chapter, startVerse)
+		query = fmt.Sprintf("%s%s%s:%v&formatting=plain", API_Endpoint, book, chapter, startVerse)
 	} else {
-		query = fmt.Sprintf("%s%s %s:%v-%v&formatting=plain", API_Endpoint, book, chapter, startVerse, endVerse)
+		query = fmt.Sprintf("%s%s%s:%v-%v&formatting=plain", API_Endpoint, book, chapter, startVerse, endVerse)
 	}
 
 	resp, err := Client.Get(query)
