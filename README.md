@@ -9,11 +9,11 @@ A cross-platform, fast and lightweight discord bot to quote the Bible.
  - Configure how long the bot pauses after posting a message
 
 # Commands (to be entered on a channel the bot has access to)
- - `#biblebot BOOK CHAPTER VERSE` - quote the specified verse
- - `#biblebot BOOK CHAPTER VERSE:VERSE` - quote the specified verses
- - `#biblebot status` - report whether the bot is online
- - `#biblebot version` - display biblebot's version
- - `#biblebot help` - display information on biblebot's commands
+ - "#biblebot BOOK CHAPTER VERSE" - quote the specified verse
+ - "#biblebot BOOK CHAPTER VERSE:VERSE" - quote the specified verses
+ - "#biblebot status" - report whether the bot is online
+ - "#biblebot version" - display biblebot's version
+ - "#biblebot help" - display information on biblebot's commands
  
 # Installation
 

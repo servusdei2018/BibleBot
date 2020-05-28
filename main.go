@@ -76,7 +76,7 @@ const (
 	`
 	Status = "BibleBot is online"
 	Version = "BibleBot 1.0.0"
-	API_Endpoint = "http://labs.bible.org/api/?passage="
+	API_Endpoint = `http://labs.bible.org/api/?passage=`
 )
 
 // Declare global variables
@@ -87,7 +87,6 @@ var (
 	Timeout int64	// Timeout in seconds after posting a message
 	// Variables for internal operation
 	Mutex sync.Mutex
-	Client = http.Client{ Timeout: 3*time.Second } // Wait 3 seconds max for response
 )
 
 // Initialization behavior
@@ -214,16 +213,15 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 func Get_Verses(book, chapter string, startVerse, endVerse int64) (string, error) {
 	var query string
 
-	// First, clean up after ourselves
-	defer Client.CloseIdleConnections()
-
 	if endVerse == startVerse {
 		query = fmt.Sprintf("%s%s%s:%v&formatting=plain", API_Endpoint, book, chapter, startVerse)
 	} else {
 		query = fmt.Sprintf("%s%s%s:%v-%v&formatting=plain", API_Endpoint, book, chapter, startVerse, endVerse)
 	}
 
-	resp, err := Client.Get(query)
+	fmt.Println(query)
+
+	resp, err := http.Get(query)
 	defer resp.Body.Close()
 	if err != nil { return "", err }
 
