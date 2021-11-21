@@ -1,5 +1,5 @@
 GO = go build
-GOARGS = -ldflags "-s -w" main.go
+GOARGS = -ldflags "-s -w"
 
 all:
 	# Building BibleBot for local machine; architecture local...
@@ -37,7 +37,7 @@ license:
 	make credits
 
 credits:
-	# Copyright (c) 2020, Free Software Foundation Inc., NJB/ServusDei2018 (servusdei@programmer.net)
+	# Copyright (c) 2021, Nathanael Bracy
 
 	# This program is free software; you can redistribute it and/or modify
 	# it under the terms of the GNU General Public License as published by
