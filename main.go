@@ -3,7 +3,7 @@
  * quote the Bible.
  *
  * Version 1.0.0
- * Copyright (c) 2020, Free Software Foundation Inc., NJB/ServusDei2018 (servusdei@programmer.net)
+ * Copyright (c) 2021, Nathanael Bracy
  *
  * # Features
  *   - Fully cross-platform (Mac, Windows, Linux)
@@ -60,7 +60,7 @@ import (
 const (
 	Credits = `
 	--- biblebot credits ---
-	Copyright (c) 2020, Free Software Foundation Inc., NJB/ServusDei2018
+	Copyright (c) 2021, Nathanael Bracy
 
 	Distributed under the terms of the GNU General Public License as published by the Free Software Foundation.
 	`
@@ -95,7 +95,8 @@ func init() {
 	flag.Int64Var(&MaxVerses, "verses", 5, "maximum amount of verses to serve")
 	flag.Int64Var(&Timeout, "timeout", 3, "rate limit in seconds")
 
-	flag.Parse() // Parse command-line flags
+	// Parse command-line flags
+	flag.Parse()
 }
 
 // Main application entrypoint
@@ -104,7 +105,6 @@ func main() {
 	if Token == "" {
 		fmt.Println("A valid bot token must be provided.")
 		fmt.Println(`See "./biblebot --help" for more information.`)
-
 		return
 	}
 
@@ -118,7 +118,8 @@ func main() {
 	// Register messageCreate() as a callback for MessageCreate events
 	dg.AddHandler(messageCreate)
 
-	err = dg.Open() // Open a websocket connection to discord and listen
+	// Open a websocket connection to discord and listen
+	err = dg.Open()
 	if err != nil {
 		fmt.Println("Error opening connection:", err)
 		return
@@ -149,6 +150,8 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	args := strings.Split(strings.ToLower(m.Content), " ")
 
 	// This message is in the proper format to be a verse(s) request
+	//
+	// Examples:
 	// #biblebot John 3 2
 	// #biblebot John 3 4-6
 	if args[0] == "#biblebot" && len(args) == 4 {

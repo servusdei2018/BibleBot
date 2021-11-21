@@ -8,12 +8,12 @@ A cross-platform, fast and lightweight discord bot to quote the Bible.
  - Limit the amount of verses that may be requested at one time
  - Configure how long the bot pauses after posting a message
 
-# Commands (to be entered on a channel the bot has access to)
- - "#biblebot BOOK CHAPTER VERSE" - quote the specified verse
- - "#biblebot BOOK CHAPTER VERSE:VERSE" - quote the specified verses
- - "#biblebot status" - report whether the bot is online
- - "#biblebot version" - display biblebot's version
- - "#biblebot help" - display information on biblebot's commands
+# Commands
+ - `#biblebot BOOK CHAPTER VERSE` - quote the specified verse
+ - `#biblebot BOOK CHAPTER VERSE:VERSE` - quote the specified verses
+ - `#biblebot status` - report whether the bot is online
+ - `#biblebot version` - display biblebot's version
+ - `#biblebot help` - display information on biblebot's commands
  
 # Installation
 
@@ -26,19 +26,18 @@ A cross-platform, fast and lightweight discord bot to quote the Bible.
 
 ### Mac
 
- - [biblebot_darwin_386]() - Mac (i386 processors)
- - [biblebot_darwin_amd]() - Mac (AMD processors)
+ - [biblebot_darwin_amd](https://github.com/servusdei2018/BibleBot/releases/download/1.0.0/BibleBot_1.0.0_darwin_amd64.tar.gz) - Mac (AMD processors)
 
 ### Windows
 
- - [biblebot_win_386.exe]() - Windows XP/Vista/7/8/10 (i386 processors)
- - [biblebot_win_amd.exe]() - Windows XP/Vista/7/8/10 (AMD processors)
+ - [biblebot_win_386.exe](https://github.com/servusdei2018/BibleBot/releases/download/1.0.0/BibleBot_1.0.0_windows_386.tar.gz) - Windows XP/Vista/7/8/10 (i386 processors)
+ - [biblebot_win_amd.exe](https://github.com/servusdei2018/BibleBot/releases/download/1.0.0/BibleBot_1.0.0_windows_amd64.tar.gz) - Windows XP/Vista/7/8/10 (AMD processors)
 
 ### Linux
 
- - [biblebot_linux_386]() - Universal Linux (i386 processors)
- - [biblebot_linux_amd]() - Universal Linux (AMD processors)
- - [biblebot_linux_arm]() - Universal Linux (ARM processors / Raspberry Pi)
+ - [biblebot_linux_386](https://github.com/servusdei2018/BibleBot/releases/download/1.0.0/BibleBot_1.0.0_linux_386.tar.gz) - Universal Linux (i386 processors)
+ - [biblebot_linux_amd](https://github.com/servusdei2018/BibleBot/releases/download/1.0.0/BibleBot_1.0.0_linux_amd64.tar.gz) - Universal Linux (AMD processors)
+ - [biblebot_linux_arm](https://github.com/servusdei2018/BibleBot/releases/download/1.0.0/BibleBot_1.0.0_linux_arm.tar.gz) - Universal Linux (ARM processors / Raspberry Pi)
 
 ## Configuration
 
@@ -70,21 +69,16 @@ Here are examples of running BibleBot on Linux or Mac where I put those flags in
 If you are a developer and want to compile your own version of discordbot:
 
  - Make sure you have a working Go environment with Go installed.
- - Run `go get github.com/bwmarrin/discordgo`
  - Download this repository, and unzip it.
- - From a terminal, run either `go build -o biblebot -ldflags "-s -w" main.go`, or if you have GNU Make, just type `make`.
+ - From a terminal, run either `go build -ldflags "-s -w"`, or if you have GNU Make, just type `make`.
 
 # Contributing
 
 Contributions are welcome. If you have a project that uses BibleBot, please tell us about it and we'll link it below.
 
-## Projects using BibleBot
-
-*None*
-
 # Copyright
 
-Copyright (c) 2020, Free Software Foundation Inc., NJB/ServusDei2018 (servusdei@programmer.net)
+Copyright (c) 2021, Nathanael Bracy
 
 # License
 
