@@ -29,6 +29,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         goos: ${{ matrix.goos }}
         goarch: ${{ matrix.goarch }}
-        goversion: 1.21.0
+        goversion: "https://go.dev/dl/go1.21.0.linux-amd64.tar.gz"
         binary_name: "biblebot"
         extra_files: LICENSE README.md SECURITY.md CODE_OF_CONDUCT.md
